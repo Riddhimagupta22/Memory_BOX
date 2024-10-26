@@ -101,10 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      CustomBlock(
-                          "images/6-removebg-preview (2).png",
-                          "GAMIFIED TRAINING",
-                          Color(0xff9528c7), Color(0xffda0e8c)),
+
                       CustomBlock('images/2-removebg-preview.png',
                           "MY LOCATION", Color(0xfff6e408), Color(0xfff81d77)),
                       CustomBlock(
