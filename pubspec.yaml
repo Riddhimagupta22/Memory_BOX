@@ -29,3 +29,8 @@ flutter:
   assets:
   - images/
 
+  fonts:
+    - family: Cabin
+      fonts:
+        - asset: images/Cabin/Cabin-Italic-VariableFont_wdth,wght.ttf
+        - asset: images/Cabin/Cabin-VariableFont_wdth,wght.ttf

@@ -1,5 +1,8 @@
+import 'package:first_app/mainPage.dart';
 import 'package:flutter/material.dart';
-import './home.dart';
+
+import 'home.dart';
+
 
 
 void main() {
@@ -15,9 +18,7 @@ class MainApp extends StatelessWidget {
       title: "First UI",
       debugShowCheckedModeBanner: false,
       color: Colors.red,
-      home: Scaffold(
-        body: Text('hello world'),
-      ),
+      home: Mainpage(),
     );
   }
 }

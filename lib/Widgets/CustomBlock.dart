@@ -11,10 +11,11 @@ class CustomBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Column(
       children: [
         Container(
-          height: MediaQuery.of(context).size.width * 0.248,
+          height: MediaQuery.of(context).size.width * 0.252,
           width:  MediaQuery.of(context).size.width * 0.254,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
