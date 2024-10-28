@@ -1,10 +1,11 @@
-import 'package:first_app/Profile.dart';
-import 'package:first_app/Search.dart';
+import 'package:first_app/Bottomnavbar/Profile.dart';
+import 'package:first_app/Bottomnavbar/Search.dart';
 import 'package:first_app/home.dart';
 import 'package:flutter/material.dart';
 
 class Mainpage extends StatefulWidget {
- const Mainpage({super.key});
+  var name;
+  Mainpage(this.name);
 
   @override
   _MainpageState createState() => _MainpageState();
@@ -14,10 +15,10 @@ class _MainpageState extends State<Mainpage> {
   final PageController _pageViewController = PageController();
   int _selectedIndex = 0;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffc8b9f7),
       body: PageView(
         controller: _pageViewController,
         onPageChanged: (index) {
@@ -25,13 +26,11 @@ class _MainpageState extends State<Mainpage> {
             _selectedIndex = index;
           });
         },
-
         children: [
-          MyHomePage(title: ''),
+          MyHomePage(title: widget.name),
           SearchPage(),
           ProfilePage(),
           ProfilePage(),
-
         ],
       ),
       bottomNavigationBar: ClipRRect(
@@ -39,7 +38,8 @@ class _MainpageState extends State<Mainpage> {
           topLeft: Radius.circular(15),
           topRight: Radius.circular(15),
         ),
-        child: BottomNavigationBar( iconSize: 20,
+        child: BottomNavigationBar(
+          iconSize: 25,
           backgroundColor: const Color(0xff402a6d),
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.white60,

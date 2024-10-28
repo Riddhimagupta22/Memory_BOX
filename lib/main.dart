@@ -1,4 +1,4 @@
-import 'package:first_app/mainPage.dart';
+import 'package:first_app/Temporary%20Screens/tracker.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';
@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
       title: "First UI",
       debugShowCheckedModeBanner: false,
       color: Colors.red,
-      home: Mainpage(),
+      home: Tracker(),
     );
   }
 }

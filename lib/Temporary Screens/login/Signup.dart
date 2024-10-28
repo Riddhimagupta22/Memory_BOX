@@ -1,10 +1,12 @@
+import 'package:first_app/Widgets/Content.dart';
 import 'package:first_app/home.dart';
-import 'package:first_app/login.dart';
+import 'package:first_app/Temporary%20Screens/login/login.dart';
+import 'package:first_app/Bottomnavbar/mainPage.dart';
 import 'package:flutter/material.dart';
 
 class Signup extends StatelessWidget {
-  const Signup({super.key});
-
+   Signup({super.key});
+  var nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -67,26 +69,29 @@ class Signup extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 30.0, right: 30.0),
                     child: SizedBox(
                       height: size.height * .055,
-                      width: size.height*.5,
+                      width: size.height * .5,
                       child: TextField(
+                        controller: nameController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                               borderSide: BorderSide.none,
                               borderRadius: BorderRadius.circular(10)),
                           fillColor: Color(0xffceb9f9),
                           filled: true,
+                          suffixIcon: Icon(Icons.person),
                           hintText: "Name",
                         ),
                       ),
                     ),
-                  ), SizedBox(
+                  ),
+                  SizedBox(
                     height: size.height * .015,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 30.0, right: 30.0),
                     child: SizedBox(
                       height: size.height * .055,
-                      width: size.height*.5,
+                      width: size.height * .5,
                       child: TextField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -94,18 +99,20 @@ class Signup extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10)),
                           fillColor: Color(0xffceb9f9),
                           filled: true,
+                          suffixIcon: Icon(Icons.email),
                           hintText: "Email",
                         ),
                       ),
                     ),
-                  ),SizedBox(
+                  ),
+                  SizedBox(
                     height: size.height * .015,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 30.0, right: 30.0),
                     child: SizedBox(
                       height: size.height * .055,
-                      width: size.height*.5,
+                      width: size.height * .5,
                       child: TextField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -113,18 +120,20 @@ class Signup extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10)),
                           fillColor: Color(0xffceb9f9),
                           filled: true,
+                          suffixIcon: Icon(Icons.visibility_off_sharp),
                           hintText: "Password",
                         ),
                       ),
                     ),
-                  ),SizedBox(
+                  ),
+                  SizedBox(
                     height: size.height * .015,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 30.0, right: 30.0),
                     child: SizedBox(
                       height: size.height * .055,
-                      width: size.height*.5,
+                      width: size.height * .5,
                       child: TextField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -136,7 +145,8 @@ class Signup extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),SizedBox(
+                  ),
+                  SizedBox(
                     height: size.height * .015,
                   ),
                   Padding(
@@ -158,38 +168,52 @@ class Signup extends StatelessWidget {
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600),
                               ),
-                              onTap: (){
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> MyApp()));
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) =>Mainpage(nameController.text)));
                               },
                             )),
                       ),
                     ),
-                  ),SizedBox(height: size.height*.02),
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text("Don't have an account ?"),
-                        InkWell(child: Text("Log in",
-                          style: TextStyle(color: Color(0xff422f91)),),
-                          onTap: (){
-                            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>LogIn()));
-                          },)
-                      ]
                   ),
-                  SizedBox(height: size.height*.03),
+                  SizedBox(height: size.height * .02),
+                  Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+                    Text("Don't have an account ?"),
+                    InkWell(
+                      child: Text(
+                        "Log In",
+                        style: TextStyle(color: Color(0xff422f91)),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(builder: (context) => LogIn()));
+                      },
+                    )
+                  ]),
+                  SizedBox(height: size.height * .03),
                   Padding(
                     padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-                    child: Row(mainAxisAlignment: MainAxisAlignment.center,
-                      children: [Expanded(child: Divider(
-                          thickness: 2,color: Colors.black),),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Divider(thickness: 2, color: Colors.black),
+                        ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 10),
-                          child: Text("Or Sign up with",style: TextStyle(color: Colors.black45),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 0, horizontal: 10),
+                          child: Text(
+                            "Or Sign up with",
+                            style: TextStyle(color: Colors.black45),
                           ),
                         ),
-                        Expanded(child: Divider( thickness: 2,color: Colors.black),),
-                      ],),
-                  ),SizedBox(
+                        Expanded(
+                          child: Divider(thickness: 2, color: Colors.black),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
                     height: size.height * .009,
                   ),
                   Container(
@@ -201,10 +225,16 @@ class Signup extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CircleAvatar(backgroundImage: AssetImage("images/googlelogo.jpg"),
-                        ),Text("Sign Up With Gmail",
-                          style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,
-                              fontSize: 15),)
+                        CircleAvatar(
+                          backgroundImage: AssetImage("images/googlelogo.jpg"),
+                        ),
+                        Text(
+                          "Sign Up With Gmail",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                        )
                       ],
                     ),
                   )

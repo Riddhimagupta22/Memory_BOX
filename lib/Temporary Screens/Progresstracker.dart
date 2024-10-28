@@ -1,8 +1,8 @@
-import 'package:first_app/Chatbox.dart';
+import 'package:first_app/Temporary%20Screens/training.dart';
 import 'package:flutter/material.dart';
 
-class Trackerpage extends StatelessWidget {
-  const Trackerpage({super.key});
+class Progresstracker extends StatelessWidget {
+  const Progresstracker({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,15 @@ class Trackerpage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 130,right: 50,left: 30),
+              padding: const EdgeInsets.only(
+                top: 110,
+              ),
               child: Container(
-                child: Image(image: AssetImage("images/WhatsApp_Image_2024-10-28_at_01.30.28-removebg-preview.png",)),
-                height: size.height * .26,
-                width: size.height * .25,
+                child: Image(
+                  image: AssetImage(
+                      "images/WhatsApp_Image_2024-10-28_at_01.30.39-removebg-preview.png"),
+                  height: size.height * .33,
+                ),
               ),
             ),
             Padding(
@@ -33,34 +37,47 @@ class Trackerpage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(".",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color:  Colors.black),),
-                  Text("...",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color:  Colors.white),)],),
+                  Text(
+                    "..",
+                    style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                  Text(
+                    ".",
+                    style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
+                  Text(
+                    ".",
+                    style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  )
+                ],
+              ),
             ),
             SizedBox(
-              height: size.height * .04,
+              height: size.height * .01,
             ),
             Container(
               child: Column(
                 children: [
                   Text(
-                    "Prescription & Dosage",
+                    "Progress Tracker",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontFamily: "Cabin",
-                        fontSize: 25,
-                        color: Colors.white),
-                  ),
-                  Text(
-                    "Tracker",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Cabin",
-                        fontSize: 25,
+                        fontSize: 30,
                         color: Colors.white),
                   ),
                 ],
               ),
-              height: size.width * .25,
+              height: size.width * .16,
               width: size.width * .85,
             ),
             Container(
@@ -68,7 +85,7 @@ class Trackerpage extends StatelessWidget {
               width: size.width * .999,
               child: Column(
                 children: [
-                  SizedBox(height: size.height*.01),
+                  SizedBox(height: size.height * .01),
                   Text(
                     "Memory Box is a mobile based application backed by",
                     style: TextStyle(
@@ -77,31 +94,37 @@ class Trackerpage extends StatelessWidget {
                         fontSize: 14,
                         color: Colors.white),
                   ),
-                  SizedBox(height: size.height*.01),
+                  SizedBox(height: size.height * .01),
                   Text(
                     "a web-application that ensures compatibility and",
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontFamily: "Cabin",
-                        fontSize:15,
+                        fontSize: 15,
                         color: Colors.white),
                   ),
-                  SizedBox(height: size.height*.01),
+                  SizedBox(height: size.height * .01),
                   Text(
                     "stability in its own accord",
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontFamily: "Cabin",
-                        fontSize:15,
+                        fontSize: 15,
                         color: Colors.white),
-                  ),SizedBox(height: size.height*.07),
-                  ElevatedButton(onPressed: (){
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>Chatbox()));
-                  },
-                    style: ElevatedButton.styleFrom(backgroundColor: Color(0xff442d82)) ,
-
-
-                    child: Text("LET'S GO",style: TextStyle(color: Colors.white),),)
+                  ),
+                  SizedBox(height: size.height * .08),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context) => Training()));
+                    },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xff442d82)),
+                    child: Text(
+                      "Skip",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  )
                 ],
               ),
             ),

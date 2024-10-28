@@ -1,4 +1,5 @@
-import 'package:first_app/Signup.dart';
+import 'package:first_app/Temporary%20Screens/login/Signup.dart';
+import 'package:first_app/Bottomnavbar/mainPage.dart';
 import 'package:flutter/material.dart';
 
 class LogIn extends StatelessWidget {
@@ -107,6 +108,7 @@ class LogIn extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(15)),
                                 fillColor: Color(0xffceb9f9),
                                 filled: true,
+                                suffixIcon: Icon(Icons.visibility_off_sharp),
                                 hintText: "Password",
                               ),
                             ),
@@ -128,19 +130,23 @@ class LogIn extends StatelessWidget {
                               padding: const EdgeInsets.only(left: 4),
                               child: Align(
                                   alignment: Alignment.center,
-                                  child: Text(
-                                    "Log In",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w600),
-                                  )),
+                                  child: InkWell(
+                                    child: Text(
+                                      "Log In",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+
+                                  )
+                              ),
                             ),
                           ),
                         ),
                         SizedBox(height: 12),
                         Padding(
                           padding: const EdgeInsets.only(top: 5, left: 103),
-                          child: Text("Forgot Password?",
+                          child: Text("Forgot Password ?",
                               style: TextStyle(color: Color(0xff422f91))),
                         ),
                         SizedBox(height: size.height * .05),

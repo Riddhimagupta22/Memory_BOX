@@ -1,4 +1,4 @@
-import 'package:first_app/login.dart';
+import 'package:first_app/Temporary%20Screens/login/login.dart';
 import 'package:flutter/material.dart';
 
 class Training extends StatelessWidget {
@@ -21,21 +21,41 @@ class Training extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 110,left: 30),
+              padding: const EdgeInsets.only(top: 110, left: 30),
               child: Container(
-                child: Image(image: AssetImage("images/WhatsApp_Image_2024-10-28_at_01.30.28__1_-removebg-preview.png"),
-                  height: size.height*.29,),),
 
-            ),Padding(
-              padding: const EdgeInsets.only(top: 15.0,left: 25),
+                child: Image(
+                  image: AssetImage(
+                    "images/WhatsApp_Image_2024-10-28_at_01.30.28__1_-removebg-preview.png",
+                  ),
+                  height: size.height * .3,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 15.0, left: 25),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("...",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color:  Colors.white),),
-                  Text(".",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color:  Colors.black),)],),
+                  Text(
+                    "...",
+                    style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                  Text(
+                    ".",
+                    style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  )
+                ],
+              ),
             ),
             SizedBox(
-              height: size.height * .04,
+              height: size.height * .01,
             ),
             Container(
               child: Column(
@@ -43,30 +63,33 @@ class Training extends StatelessWidget {
                   Text(
                     "Gamified memory",
                     style: TextStyle(
-                        fontWeight:FontWeight.bold,
+                        fontWeight: FontWeight.bold,
                         fontFamily: "Cabin",
-                        fontSize: 25,
+                        fontSize: 30,
                         color: Colors.white),
                   ),
                   Text(
                     "training",
                     style: TextStyle(
-                        fontWeight:FontWeight.bold,
+                        fontWeight: FontWeight.bold,
                         fontFamily: "Cabin",
-                        fontSize: 25,
+                        fontSize: 30,
                         color: Colors.white),
                   ),
                 ],
               ),
-              height: size.width * .2,
+              height: size.width * .24,
               width: size.width * .85,
             ),
-            SizedBox(height: size.height*.03,),
+            SizedBox(
+              height: size.height * .03,
+            ),
             Container(
               height: size.width * .69,
               width: size.width * .999,
               child: Column(
-                children: [SizedBox(height: size.height*.01),
+                children: [
+                  SizedBox(height: size.height * .01),
                   Text(
                     "Memory Box is a mobile based application backed by",
                     style: TextStyle(
@@ -74,34 +97,43 @@ class Training extends StatelessWidget {
                         fontFamily: "Cabin",
                         fontSize: 14,
                         color: Colors.white),
-                  ),SizedBox(height: size.height*.01),
+                  ),
+                  SizedBox(height: size.height * .01),
                   Text(
                     "a web-application that ensures compatibility and",
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontFamily: "Cabin",
-                        fontSize:15,
+                        fontSize: 15,
                         color: Colors.white),
-                  ),SizedBox(height: size.height*.01),
+                  ),
+                  SizedBox(height: size.height * .01),
                   Text(
                     "stability in its own accord",
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontFamily: "Cabin",
-                        fontSize:15,
+                        fontSize: 15,
                         color: Colors.white),
-                  ),SizedBox(height: size.height*.06),
-                  ElevatedButton(onPressed: (){
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>LogIn()));
-                  }, style: ElevatedButton.styleFrom(backgroundColor: Color(0xff442d82)) ,
-
-
-                    child: Text("LET'S GO",style: TextStyle(color: Colors.white),),),
-
+                  ),
+                  SizedBox(height: size.height * .06),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context) => LogIn()));
+                    },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xff442d82)),
+                    child: Text(
+                      "Skip",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
                 ],
               ),
             ),
-          ], ),
+          ],
+        ),
       ),
     );
   }

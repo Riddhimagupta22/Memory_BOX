@@ -5,7 +5,8 @@ import 'Card.dart';
 import 'CustomBlock.dart';
 
 class Content extends StatelessWidget {
-  const Content({super.key});
+  var name;
+   Content(this.name);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class Content extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Hey Rhea!",
+                    "Hey $name!",
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
@@ -103,7 +104,7 @@ class Content extends StatelessWidget {
           child: Container(
             height: size.height * .150,
             decoration: BoxDecoration(
-              boxShadow: [BoxShadow(color: Colors.black, blurRadius: 23)],
+              boxShadow: [BoxShadow(color: Colors.black, blurRadius: 3)],
               gradient: LinearGradient(
                 colors: [Color(0xff452f86), Color(0xff1e1439)],
                 begin: Alignment.topCenter,
@@ -168,7 +169,7 @@ class Content extends StatelessWidget {
                   "images/5.jpg",
                 ),
                 fit: BoxFit.cover,
-                opacity: 0.21,
+                opacity: 0.26,
               ),
             ),
             child: Row(
@@ -191,7 +192,10 @@ class Content extends StatelessWidget {
                 ),
               ],
             ),
+
           ),
+        ), SizedBox(
+          height: size.height * .01,
         ),
       ],
     );
